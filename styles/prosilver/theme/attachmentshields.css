@@ -1,0 +1,18 @@
+dl.attachmentshields-file {
+	background-color: #ffffe6;
+	border: 1px solid;
+	border-radius: 10px;
+	margin: 5px;
+	padding: 20px 20px 20px;
+	width: auto;
+}
+dt.attachmentshields-image {
+	border: 1px solid;
+}
+dd.attachmentshields-comment {
+	padding: 5px 5px 5px;
+}
+dd.attachmentshields-name {
+	font-size: 15px;
+	padding: 5px 5px 5px;
+}
