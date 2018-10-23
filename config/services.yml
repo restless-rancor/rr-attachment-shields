@@ -1,0 +1,7 @@
+services:
+    restlessrancor.attachmentshields.listener:
+        class: restlessrancor\attachmentshields\event\main_listener
+        arguments:
+            - '@language'
+        tags:
+            - { name: event.listener }
