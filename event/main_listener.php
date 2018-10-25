@@ -26,7 +26,6 @@ class main_listener implements EventSubscriberInterface
     {
         return array(
             'core.user_setup' => 'load_language_on_setup',
-			'core.viewtopic_modify_post_row' => 'add_language',
         );
     }
 
@@ -39,9 +38,4 @@ class main_listener implements EventSubscriberInterface
         );
         $event['lang_set_ext'] = $lang_set_ext;
     }
-
-	public function add_language()
-	{
-		$this->language->add_lang('common', 'restlessrancor/attachmentshields');
-	}
 }
