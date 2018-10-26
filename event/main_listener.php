@@ -25,17 +25,12 @@ class main_listener implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
-            'core.user_setup' => 'load_language_on_setup',
+            'core.viewtopic_post_rowset_data' => 'add_language',
         );
     }
 
-    public function load_language_on_setup($event)
-    {
-        $lang_set_ext = $event['lang_set_ext'];
-        $lang_set_ext[] = array(
-            'ext_name' => 'restlessrancor/attachmentshields',
-            'lang_set' => 'common',
-        );
-        $event['lang_set_ext'] = $lang_set_ext;
-    }
+	public function add_language()
+	{
+		$this->language->add_lang('common', 'restlessrancor/attachmentshields');
+	}
 }
