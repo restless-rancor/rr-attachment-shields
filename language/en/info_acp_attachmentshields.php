@@ -21,11 +21,19 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ASHIELDS_TITLE'			=> 'Attachment Shields',
 	'ASHIELDS_SETTINGS'			=> 'Settings',
-	'ASHIELDS_ENABLE_FAIL'		=> 'Failed to enable the extension!',
+	'ASHIELDS_ENABLE_FAIL'		=> '!!! FAILED TO ENABLE !!!',
 	'ASHIELDS_ENABLE_SUCCESS'	=> 'Enabled succesfully!',
 	'ASHIELDS_SAVED'			=> 'Settings have been saved successfully!.',
 	'ASHIELDS_UPDATED'			=> 'Updated Attachment Shields configuration.',
 	
 	'ASHIELDS_ENABLE'			=> 'Enable Attachment Shields',
 	'ASHIELDS_ENABLE_EXPLAIN'	=> 'Globally enable the extension.',
+	
+	'ASHIELDS_COLOR'			=> 'Shield Subject HTML Color',
+	'ASHIELDS_COLOR_EXPLAIN'	=> 'e.g: <em>FF0000</em>. Do not include a hashtag #',
+	
+	'ASHIELDS_HELP'				=> 'Version numbers info',
+	'ASHIELDS_HELP_EXPLAIN'		=> 'For the file comment to be intercepted as a version number, the comment must be specific',
+	'ASHIELDS_VERSION_ENABLE'	=> 'Enable comment interception for version numbers',
+
 ));

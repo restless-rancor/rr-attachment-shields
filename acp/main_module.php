@@ -47,6 +47,8 @@ class main_module
 			}
 
 			$this->config->set('ashields_enable', $this->request->variable('ashields_enable', 0));
+			$this->config->set('ashields_version_enable', $this->request->variable('ashields_version_enable', 0));
+			$this->config->set('ashields_color', trim($this->request->variable('ashields_color', $this->config['ashields_color'])));
 			
 			// Add to admin log
 			$phpbb_log->add('admin', $user->data['user_id'], $user->ip, 'ASHIELDS_UPDATED');
@@ -56,8 +58,10 @@ class main_module
 
 		// Assign to global template.
 		$template->assign_vars(array(
-			'ASHIELDS_ENABLE'	=> (!empty($this->config['ashields_enable'])) ? true : false,
-			'U_ACTION'			=> $this->u_action,
+			'ASHIELDS_ENABLE'			=> (!empty($this->config['ashields_enable'])) ? true : false,
+			'ASHIELDS_VERSION_ENABLE'	=> (!empty($this->config['ashields_version_enable'])) ? true : false,
+			'ASHIELDS_COLOR'			=> $this->config['ashields_color'],
+			'U_ACTION'					=> $this->u_action,
 		));
 	}
 }

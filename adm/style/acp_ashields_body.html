@@ -5,14 +5,50 @@
 <form id="acp_board" method="post" action="{U_ACTION}">
 
 	<fieldset>
+		<legend>{{ lang('ASHIELDS_HELP') }}</legend>
+		<dl>
+			<dt>
+				<label for="ashields_help_explain">{{ lang('ASHIELDS_HELP_EXPLAIN') }}{{ lang('COLON') }}</label>
+			</dt>
+			<dd>
+				<label for="ashields_help_explain2">version-x.x.x</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="ashields_help_explain3">e.g: version-1.0.0</label>
+			</dt>
+			<dd>
+				<label for="ashields_help_explain4"><img src="https://img.shields.io/badge/version-1.0.0-{{ ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses" /></label>
+			</dd>
+		</dl>
+	</fieldset>
+	<fieldset>
 		<legend>{{ lang('SETTINGS') }}</legend>
 		<dl>
 			<dt>
-				<label for="pcoi_enable">{{ lang('ASHIELDS_ENABLE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ASHIELDS_ENABLE_EXPLAIN') }}</span>
+				<label for="ashields_enable">{{ lang('ASHIELDS_ENABLE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ASHIELDS_ENABLE_EXPLAIN') }}</span>
 			</dt>
 			<dd>
 				<label><input type="radio" name="ashields_enable" value="1"{% if ASHIELDS_ENABLE %} checked{% endif %}> {{ lang('YES') }}</label>
 				<label><input type="radio" name="ashields_enable" value="0"{% if not ASHIELDS_ENABLE %} checked{% endif %}> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="ashields_enable">{{ lang('ASHIELDS_VERSION_ENABLE') }}{{ lang('COLON') }}</label>
+			</dt>
+			<dd>
+				<label><input type="radio" name="ashields_version_enable" value="1"{% if ASHIELDS_VERSION_ENABLE %} checked{% endif %}> {{ lang('YES') }}</label>
+				<label><input type="radio" name="ashields_version_enable" value="0"{% if not ASHIELDS_VERSION_ENABLE %} checked{% endif %}> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="ashields_color">{{ lang('ASHIELDS_COLOR') ~ lang('COLON') }}</label><br /><span>{{ lang('ASHIELDS_COLOR_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input type="text" name="ashields_color" id="ashields_color" class="input" value="{{ ASHIELDS_COLOR }}" />
 			</dd>
 		</dl>
 	</fieldset>

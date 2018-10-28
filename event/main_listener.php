@@ -42,7 +42,9 @@ class main_listener implements EventSubscriberInterface
 	{
 		$this->language->add_lang('common', 'restlessrancor/attachmentshields');
 		$this->template->assign_vars(array(
-		'S_ASHIELDS_ENABLE'		=> $this->config['ashields_enable'] ? true : false,
+		'S_ASHIELDS_ENABLE'				=> $this->config['ashields_enable'] ? true : false,
+		'S_ASHIELDS_VERSION_ENABLE'		=> $this->config['ashields_version_enable'] ? true : false,
+		'S_ASHIELDS_COLOR'				=> $this->config['ashields_color'],
 		));
 	}
 }

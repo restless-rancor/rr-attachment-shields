@@ -9,20 +9,20 @@
 	<dl class="attachmentshields-file">
 		<dt class="attachmentshields-image"><img src="{_file.U_INLINE_LINK}" class="postimage" alt="{_file.DOWNLOAD_NAME}" onclick="viewableArea(this);" /></dt>
 		<!-- IF _file.COMMENT --><dd class="attachmentshields-comment"><em>{_file.COMMENT}</em></dd><!-- ENDIF -->
-		<dd class="attachmentshields-name">{_file.DOWNLOAD_NAME} <img src="https://img.shields.io/badge/filesize-{_file.FILESIZE} {_file.SIZE_LANG}-blue.svg?LongCache=true&?label=healthinesses"> <img src="https://img.shields.io/badge/views-{_file.L_DOWNLOAD_COUNT}-blue.svg?LongCache=true&?label=healthinesses"></dd>
+		<dd class="attachmentshields-name">{_file.DOWNLOAD_NAME} <img src="https://img.shields.io/badge/filesize-{_file.FILESIZE} {_file.SIZE_LANG}-{{ S_ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses"> <img src="https://img.shields.io/badge/views-{_file.L_DOWNLOAD_COUNT}-{{ S_ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses"></dd>
 	</dl>
 <!-- ENDIF -->
 
 <!-- IF _file.S_FILE -->
-	{% if _file.COMMENT matches '\bv?[0-9]+\.[0-9]+\.[0-9]+(?:\.[0-9]+)?\b' %}
+	{% if _file.COMMENT matches '\bv?[0-9]+\.[0-9]+\.[0-9]+(?:\.[0-9]+)?\b' and S_ASHIELDS_VERSION_ENABLE %}
 	<dl class="attachmentshields-file">
-		<dt><!-- IF _file.UPLOAD_ICON -->{_file.UPLOAD_ICON} <!-- ENDIF --><a class="postlink" href="{_file.U_DOWNLOAD_LINK}">{_file.DOWNLOAD_NAME}</a>&nbsp;<img src="https://img.shields.io/badge/{_file.COMMENT}-blue.svg?LongCache=true&?label=healthinesses">&nbsp;<img src="https://img.shields.io/badge/filesize-{_file.FILESIZE} {_file.SIZE_LANG}-blue.svg?LongCache=true&?label=healthinesses">&nbsp;<img src="https://img.shields.io/badge/downloads-{_file.L_DOWNLOAD_COUNT}-blue.svg?LongCache=true&?label=healthinesses"></dt>
+		<dt><!-- IF _file.UPLOAD_ICON -->{_file.UPLOAD_ICON} <!-- ENDIF --><a class="postlink" href="{_file.U_DOWNLOAD_LINK}">{_file.DOWNLOAD_NAME}</a>&nbsp;<img src="https://img.shields.io/badge/{_file.COMMENT}-{{ S_ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses">&nbsp;<img src="https://img.shields.io/badge/filesize-{_file.FILESIZE} {_file.SIZE_LANG}-{{ S_ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses">&nbsp;<img src="https://img.shields.io/badge/downloads-{_file.L_DOWNLOAD_COUNT}-{{ S_ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses"></dt>
 	</dl>
 	{% else %}
 	<dl class="attachmentshields-file">
 		<dt><!-- IF _file.UPLOAD_ICON -->{_file.UPLOAD_ICON} <!-- ENDIF --><a class="postlink" href="{_file.U_DOWNLOAD_LINK}">{_file.DOWNLOAD_NAME}</a></dt>
 		<!-- IF _file.COMMENT --><dd class="attachmentshields-comment"><em>{_file.COMMENT}</em></dd><!-- ENDIF -->
-		<dd><img src="https://img.shields.io/badge/filesize-{_file.FILESIZE} {_file.SIZE_LANG}-blue.svg?LongCache=true&?label=healthinesses">&nbsp;<img src="https://img.shields.io/badge/downloads-{_file.L_DOWNLOAD_COUNT}-blue.svg?LongCache=true&?label=healthinesses"></dd>
+		<dd><img src="https://img.shields.io/badge/filesize-{_file.FILESIZE} {_file.SIZE_LANG}-{{ S_ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses">&nbsp;<img src="https://img.shields.io/badge/downloads-{_file.L_DOWNLOAD_COUNT}-{{ S_ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses"></dd>
 	</dl>
 	{% endif %}
 <!-- ENDIF -->
@@ -37,6 +37,6 @@
 			<param name="allowNetworking" value="internal" />
 			<embed src="{_file.U_VIEW_LINK}" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" width="{_file.WIDTH}" height="{_file.HEIGHT}" play="true" loop="true" quality="high" allowscriptaccess="never" allownetworking="internal"></embed>
 		</object>
-		<p><a href="{_file.U_DOWNLOAD_LINK}">{_file.DOWNLOAD_NAME}</a> <img src="https://img.shields.io/badge/filesize-{_file.FILESIZE} {_file.SIZE_LANG}-blue.svg?LongCache=true&?label=healthinesses">&nbsp;<img src="https://img.shields.io/badge/downloads-{_file.L_DOWNLOAD_COUNT}-blue.svg?LongCache=true&?label=healthinesses"></p>
+		<p><a href="{_file.U_DOWNLOAD_LINK}">{_file.DOWNLOAD_NAME}</a> <img src="https://img.shields.io/badge/filesize-{_file.FILESIZE} {_file.SIZE_LANG}-{{ S_ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses">&nbsp;<img src="https://img.shields.io/badge/downloads-{_file.L_DOWNLOAD_COUNT}-{{ S_ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses"></p>
 <!-- ENDIF -->
 <!--
