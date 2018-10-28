@@ -10,17 +10,26 @@
 
 namespace restlessrancor\attachmentshields\event;
 
-use phpbb\language\language;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class main_listener implements EventSubscriberInterface
 {
+	protected $user;
+    protected $template;
 	protected $language;
+	protected $config;
 	
-	public function __construct(language $language)
-	{
+    public function __construct(
+		\phpbb\user $user, 
+		\phpbb\template\twig\twig $template, 
+		\phpbb\language\language $language,
+		\phpbb\config\config $config)
+    {
+        $this->user = $user;
+        $this->template = $template;
 		$this->language = $language;
-	}
+		$this->config = $config;
+    }
 
     public static function getSubscribedEvents()
     {
@@ -32,5 +41,8 @@ class main_listener implements EventSubscriberInterface
 	public function add_language()
 	{
 		$this->language->add_lang('common', 'restlessrancor/attachmentshields');
+		$this->template->assign_vars(array(
+		'S_ASHIELDS_ENABLE'		=> $this->config['ashields_enable'] ? true : false,
+		));
 	}
 }

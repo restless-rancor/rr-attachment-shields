@@ -2,6 +2,9 @@ services:
     restlessrancor.attachmentshields.listener:
         class: restlessrancor\attachmentshields\event\main_listener
         arguments:
+            - '@user'
+            - '@template'
             - '@language'
+            - '@config'
         tags:
             - { name: event.listener }
