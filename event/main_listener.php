@@ -44,49 +44,138 @@ class main_listener implements EventSubscriberInterface
 		$this->template->assign_vars(array(
 		'S_ASHIELDS_ENABLE'				=> $this->config['ashields_enable'] ? true : false,
 		'S_ASHIELDS_VERSION_ENABLE'		=> $this->config['ashields_version_enable'] ? true : false,
-		'S_ASHIELDS_COLOR'				=> $this->config['ashields_color'],
+		'S_ASHIELDS_FILE_COLOR'			=> $this->config['ashields_file_color'],
+		'S_ASHIELDS_IMAGE_COLOR'		=> $this->config['ashields_image_color'],
+		'S_ASHIELDS_FLASH_COLOR'		=> $this->config['ashields_flash_color'],
 		));
 		// Assign each style value to the template
-		if ($this->config['ashields_style'] == 0)
+		// File shields
+		if ($this->config['ashields_file_style'] == 0)
 		{
 			$this->template->assign_vars(array(
-			'ASHIELDS_STYLE'	=> '?LongCache=true&style=flat',
+			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=flat',
 			));
 		}
-		if ($this->config['ashields_style'] == 1)
+		if ($this->config['ashields_file_style'] == 1)
 		{
 			$this->template->assign_vars(array(
-			'ASHIELDS_STYLE'	=> '?LongCache=true&style=plastic',
+			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=plastic',
 			));
 		}		
-		if ($this->config['ashields_style'] == 2)
+		if ($this->config['ashields_file_style'] == 2)
 		{
 			$this->template->assign_vars(array(
-			'ASHIELDS_STYLE'	=> '?LongCache=true&style=flat-square',
+			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=flat-square',
 			));
 		}		
-		if ($this->config['ashields_style'] == 3)
+		if ($this->config['ashields_file_style'] == 3)
 		{
 			$this->template->assign_vars(array(
-			'ASHIELDS_STYLE'	=> '?LongCache=true&style=for-the-badge',
+			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=for-the-badge',
 			));
 		}		
-		if ($this->config['ashields_style'] == 4)
+		if ($this->config['ashields_file_style'] == 4)
 		{
 			$this->template->assign_vars(array(
-			'ASHIELDS_STYLE'	=> '?LongCache=true&style=popout',
+			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=popout',
 			));
 		}		
-		if ($this->config['ashields_style'] == 5)
+		if ($this->config['ashields_file_style'] == 5)
 		{
 			$this->template->assign_vars(array(
-			'ASHIELDS_STYLE'	=> '?LongCache=true&style=popout-square',
+			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=popout-square',
 			));
 		}		
-		if ($this->config['ashields_style'] == 6)
+		if ($this->config['ashields_file_style'] == 6)
 		{
 			$this->template->assign_vars(array(
-			'ASHIELDS_STYLE'	=> '?LongCache=true&style=social',
+			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=social',
+			));
+		}
+		// Image shields
+		if ($this->config['ashields_image_style'] == 0)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=flat',
+			));
+		}
+		if ($this->config['ashields_image_style'] == 1)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=plastic',
+			));
+		}		
+		if ($this->config['ashields_image_style'] == 2)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=flat-square',
+			));
+		}		
+		if ($this->config['ashields_image_style'] == 3)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=for-the-badge',
+			));
+		}		
+		if ($this->config['ashields_image_style'] == 4)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=popout',
+			));
+		}		
+		if ($this->config['ashields_image_style'] == 5)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=popout-square',
+			));
+		}		
+		if ($this->config['ashields_image_style'] == 6)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=social',
+			));
+		}
+		// Flash shields
+		if ($this->config['ashields_flash_style'] == 0)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=flat',
+			));
+		}
+		if ($this->config['ashields_flash_style'] == 1)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=plastic',
+			));
+		}		
+		if ($this->config['ashields_flash_style'] == 2)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=flat-square',
+			));
+		}		
+		if ($this->config['ashields_flash_style'] == 3)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=for-the-badge',
+			));
+		}		
+		if ($this->config['ashields_flash_style'] == 4)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=popout',
+			));
+		}		
+		if ($this->config['ashields_flash_style'] == 5)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=popout-square',
+			));
+		}		
+		if ($this->config['ashields_flash_style'] == 6)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=social',
 			));
 		}
 	}

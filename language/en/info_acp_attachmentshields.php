@@ -21,10 +21,16 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ASHIELDS_TITLE'			=> 'Attachment Shields',
 	'ASHIELDS_SETTINGS'			=> 'Settings',
+	'ASHIELDS_GLOBAL'			=> 'Global Settings',
+	'ASHIELDS_IMAGE'			=> 'Image File Settings',
+	'ASHIELDS_FILE'				=> 'File Settings',
+	'ASHIELDS_FLASH'			=> 'Flash File Settings',
 	'ASHIELDS_ENABLE_FAIL'		=> '!!! FAILED TO ENABLE !!!',
 	'ASHIELDS_ENABLE_SUCCESS'	=> 'Enabled succesfully!',
 	'ASHIELDS_SAVED'			=> 'Settings have been saved successfully!.',
 	'ASHIELDS_UPDATED'			=> 'Updated Attachment Shields configuration.',
+	'ASHIELDS_PREVIEW'			=> 'Preview:',
+	'ASHIELDS_PREVIEW_EXPLAIN'	=> 'You must click <em>Submit</em> and reload the page for the Preview to update.',
 	
 	'ASHIELDS_ENABLE'			=> 'Enable Attachment Shields',
 	'ASHIELDS_ENABLE_EXPLAIN'	=> 'Globally enable the extension.',
@@ -34,7 +40,7 @@ $lang = array_merge($lang, array(
 	
 	'ASHIELDS_HELP'				=> 'Version numbers info',
 	'ASHIELDS_HELP_EXPLAIN'		=> 'For the file comment to be intercepted as a version number, the comment must be specific',
-	'ASHIELDS_VERSION_ENABLE'	=> 'Enable comment interception for version numbers',
+	'ASHIELDS_VERSION_ENABLE'	=> 'Enable comment interception for file version numbers',
 	
 	'ASHIELDS_STYLE'			=> 'Shield Style',
 	'ASHIELDS_STYLE_EXPLAIN'	=> 'More info at <a href="https://shields.io">shields.io</a>',

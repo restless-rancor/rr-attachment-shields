@@ -19,12 +19,12 @@
 				<label for="ashields_help_explain3">e.g: version-1.0.0</label>
 			</dt>
 			<dd>
-				<label for="ashields_help_explain4"><img src="https://img.shields.io/badge/version-1.0.0-{{ ASHIELDS_COLOR }}.svg{{ ASHIELDS_STYLE }}" /></label>
+				<label for="ashields_help_explain4"><img src="https://img.shields.io/badge/version-1.0.0-red.svg" /></label>
 			</dd>
 		</dl>
 	</fieldset>
 	<fieldset>
-		<legend>{{ lang('SETTINGS') }}</legend>
+		<legend>{{ lang('ASHIELDS_GLOBAL') }}</legend>
 		<dl>
 			<dt>
 				<label for="ashields_enable">{{ lang('ASHIELDS_ENABLE') }}{{ lang('COLON') }}</label><br /><span>{{ lang('ASHIELDS_ENABLE_EXPLAIN') }}</span>
@@ -43,27 +43,108 @@
 				<label><input type="radio" name="ashields_version_enable" value="0"{% if not ASHIELDS_VERSION_ENABLE %} checked{% endif %}> {{ lang('NO') }}</label>
 			</dd>
 		</dl>
+	</fieldset>
+	<fieldset>
+		<legend>{{ lang('ASHIELDS_IMAGE') }}</legend>
 		<dl>
 			<dt>
-				<label for="ashields_color">{{ lang('ASHIELDS_COLOR') ~ lang('COLON') }}</label><br /><span>{{ lang('ASHIELDS_COLOR_EXPLAIN') }}</span>
+				<label for="ashields_preview">{{ lang('ASHIELDS_PREVIEW') }}</label><br /><span>{{ lang('ASHIELDS_PREVIEW_EXPLAIN') }}</span>
 			</dt>
 			<dd>
-				<input type="text" name="ashields_color" id="ashields_color" class="input" value="{{ ASHIELDS_COLOR }}" />
+				<img src="https://img.shields.io/badge/version-1.0.0-{{ ASHIELDS_IMAGE_COLOR }}.svg{{ ASHIELDS_IMAGE_STYLE }}" />
 			</dd>
 		</dl>
 		<dl>
 			<dt>
-				<label for="ashields_style">{{ lang('ASHIELDS_STYLE') ~ lang('COLON') }} {{ ASHIELDS_STYLE2 }}</label><br /><span>{{ lang('ASHIELDS_STYLE_EXPLAIN') }}</span>
+				<label for="ashields_image_color">{{ lang('ASHIELDS_COLOR') ~ lang('COLON') }}</label><br /><span>{{ lang('ASHIELDS_COLOR_EXPLAIN') }}</span>
 			</dt>
 			<dd>
-				<select name="ashields_style">
-					<option value="0"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=flat" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FLAT') }}</option>
-					<option value="1"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=plastic" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_PLASTIC') }}</option>
-					<option value="2"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=flat-square" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FLAT_SQUARE') }}</option>
-					<option value="3"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=for-the-badge" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FOR_THE_BADGE') }}</option>
-					<option value="4"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=popout" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_POPOUT') }}</option>
-					<option value="5"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=popout-square" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_POPOUT_SQUARE') }}</option>
-					<option value="6"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=social" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_SOCIAL') }}</option>
+				<input type="text" name="ashields_image_color" id="ashields_image_color" class="input" value="{{ ASHIELDS_IMAGE_COLOR }}" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="ashields_image_style">{{ lang('ASHIELDS_STYLE') ~ lang('COLON') }} {{ ASHIELDS_STYLE2 }}</label><br /><span>{{ lang('ASHIELDS_STYLE_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<select name="ashields_image_style">
+					<option value="0"<!-- IF ASHIELDS_IMAGE_STYLE == "?LongCache=true&style=flat" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FLAT') }}</option>
+					<option value="1"<!-- IF ASHIELDS_IMAGE_STYLE == "?LongCache=true&style=plastic" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_PLASTIC') }}</option>
+					<option value="2"<!-- IF ASHIELDS_IMAGE_STYLE == "?LongCache=true&style=flat-square" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FLAT_SQUARE') }}</option>
+					<option value="3"<!-- IF ASHIELDS_IMAGE_STYLE == "?LongCache=true&style=for-the-badge" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FOR_THE_BADGE') }}</option>
+					<option value="4"<!-- IF ASHIELDS_IMAGE_STYLE == "?LongCache=true&style=popout" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_POPOUT') }}</option>
+					<option value="5"<!-- IF ASHIELDS_IMAGE_STYLE == "?LongCache=true&style=popout-square" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_POPOUT_SQUARE') }}</option>
+					<option value="6"<!-- IF ASHIELDS_IMAGE_STYLE == "?LongCache=true&style=social" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_SOCIAL') }}</option>
+				</select>
+			</dd>
+		</dl>
+	</fieldset>
+	<fieldset>
+		<legend>{{ lang('ASHIELDS_FILE') }}</legend>
+		<dl>
+			<dt>
+				<label for="ashields_preview">{{ lang('ASHIELDS_PREVIEW') }}</label><br /><span>{{ lang('ASHIELDS_PREVIEW_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<img src="https://img.shields.io/badge/version-1.0.0-{{ ASHIELDS_FILE_COLOR }}.svg{{ ASHIELDS_FILE_STYLE }}" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="ashields_file_color">{{ lang('ASHIELDS_COLOR') ~ lang('COLON') }}</label><br /><span>{{ lang('ASHIELDS_COLOR_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input type="text" name="ashields_file_color" id="ashields_file_color" class="input" value="{{ ASHIELDS_FILE_COLOR }}" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="ashields_file_style">{{ lang('ASHIELDS_STYLE') ~ lang('COLON') }} {{ ASHIELDS_STYLE2 }}</label><br /><span>{{ lang('ASHIELDS_STYLE_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<select name="ashields_file_style">
+					<option value="0"<!-- IF ASHIELDS_FILE_STYLE == "?LongCache=true&style=flat" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FLAT') }}</option>
+					<option value="1"<!-- IF ASHIELDS_FILE_STYLE == "?LongCache=true&style=plastic" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_PLASTIC') }}</option>
+					<option value="2"<!-- IF ASHIELDS_FILE_STYLE == "?LongCache=true&style=flat-square" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FLAT_SQUARE') }}</option>
+					<option value="3"<!-- IF ASHIELDS_FILE_STYLE == "?LongCache=true&style=for-the-badge" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FOR_THE_BADGE') }}</option>
+					<option value="4"<!-- IF ASHIELDS_FILE_STYLE == "?LongCache=true&style=popout" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_POPOUT') }}</option>
+					<option value="5"<!-- IF ASHIELDS_FILE_STYLE == "?LongCache=true&style=popout-square" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_POPOUT_SQUARE') }}</option>
+					<option value="6"<!-- IF ASHIELDS_FILE_STYLE == "?LongCache=true&style=social" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_SOCIAL') }}</option>
+				</select>
+			</dd>
+		</dl>
+	</fieldset>
+	<fieldset>
+		<legend>{{ lang('ASHIELDS_FLASH') }}</legend>
+		<dl>
+			<dt>
+				<label for="ashields_preview">{{ lang('ASHIELDS_PREVIEW') }}</label><br /><span>{{ lang('ASHIELDS_PREVIEW_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<img src="https://img.shields.io/badge/version-1.0.0-{{ ASHIELDS_FLASH_COLOR }}.svg{{ ASHIELDS_FLASH_STYLE }}" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="ashields_flash_color">{{ lang('ASHIELDS_COLOR') ~ lang('COLON') }}</label><br /><span>{{ lang('ASHIELDS_COLOR_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<input type="text" name="ashields_flash_color" id="ashields_flash_color" class="input" value="{{ ASHIELDS_FLASH_COLOR }}" />
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="ashields_flash_style">{{ lang('ASHIELDS_STYLE') ~ lang('COLON') }} {{ ASHIELDS_STYLE2 }}</label><br /><span>{{ lang('ASHIELDS_STYLE_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<select name="ashields_flash_style">
+					<option value="0"<!-- IF ASHIELDS_FLASH_STYLE == "?LongCache=true&style=flat" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FLAT') }}</option>
+					<option value="1"<!-- IF ASHIELDS_FLASH_STYLE == "?LongCache=true&style=plastic" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_PLASTIC') }}</option>
+					<option value="2"<!-- IF ASHIELDS_FLASH_STYLE == "?LongCache=true&style=flat-square" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FLAT_SQUARE') }}</option>
+					<option value="3"<!-- IF ASHIELDS_FLASH_STYLE == "?LongCache=true&style=for-the-badge" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FOR_THE_BADGE') }}</option>
+					<option value="4"<!-- IF ASHIELDS_FLASH_STYLE == "?LongCache=true&style=popout" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_POPOUT') }}</option>
+					<option value="5"<!-- IF ASHIELDS_FLASH_STYLE == "?LongCache=true&style=popout-square" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_POPOUT_SQUARE') }}</option>
+					<option value="6"<!-- IF ASHIELDS_FLASH_STYLE == "?LongCache=true&style=social" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_SOCIAL') }}</option>
 				</select>
 			</dd>
 		</dl>
@@ -72,7 +153,6 @@
 		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />
 		{S_FORM_TOKEN}
 	</fieldset>
-
 </form>
 
 <!-- INCLUDE overall_footer.html -->
