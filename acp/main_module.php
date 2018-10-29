@@ -49,6 +49,7 @@ class main_module
 			$this->config->set('ashields_enable', $this->request->variable('ashields_enable', 0));
 			$this->config->set('ashields_version_enable', $this->request->variable('ashields_version_enable', 0));
 			$this->config->set('ashields_color', trim($this->request->variable('ashields_color', $this->config['ashields_color'])));
+			$this->config->set('ashields_style', trim($this->request->variable('ashields_style', $this->config['ashields_style'])));
 			
 			// Add to admin log
 			$phpbb_log->add('admin', $user->data['user_id'], $user->ip, 'ASHIELDS_UPDATED');
@@ -63,5 +64,49 @@ class main_module
 			'ASHIELDS_COLOR'			=> $this->config['ashields_color'],
 			'U_ACTION'					=> $this->u_action,
 		));
+		
+		// Assign each style value to the template
+		if ($this->config['ashields_style'] == 0)
+		{
+			$template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=flat',
+			));
+		}
+		if ($this->config['ashields_style'] == 1)
+		{
+			$template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=plastic',
+			));
+		}		
+		if ($this->config['ashields_style'] == 2)
+		{
+			$template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=flat-square',
+			));
+		}		
+		if ($this->config['ashields_style'] == 3)
+		{
+			$template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=for-the-badge',
+			));
+		}		
+		if ($this->config['ashields_style'] == 4)
+		{
+			$template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=popout',
+			));
+		}		
+		if ($this->config['ashields_style'] == 5)
+		{
+			$template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=popout-square',
+			));
+		}		
+		if ($this->config['ashields_style'] == 6)
+		{
+			$template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=social',
+			));
+		}
 	}
 }

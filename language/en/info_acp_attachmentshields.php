@@ -35,5 +35,15 @@ $lang = array_merge($lang, array(
 	'ASHIELDS_HELP'				=> 'Version numbers info',
 	'ASHIELDS_HELP_EXPLAIN'		=> 'For the file comment to be intercepted as a version number, the comment must be specific',
 	'ASHIELDS_VERSION_ENABLE'	=> 'Enable comment interception for version numbers',
+	
+	'ASHIELDS_STYLE'			=> 'Shield Style',
+	'ASHIELDS_STYLE_EXPLAIN'	=> 'More info at <a href="https://shields.io">shields.io</a>',
+	'ASHIELDS_FLAT'				=> 'Flat',
+	'ASHIELDS_PLASTIC'			=> 'Plastic',
+	'ASHIELDS_FLAT_SQUARE'		=> 'Flat-Square',
+	'ASHIELDS_FOR_THE_BADGE'	=> 'For-The-Badge',
+	'ASHIELDS_POPOUT'			=> 'Popout',
+	'ASHIELDS_POPOUT_SQUARE'	=> 'Popout-Square',
+	'ASHIELDS_SOCIAL'			=> 'Social',
 
 ));

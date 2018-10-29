@@ -46,5 +46,48 @@ class main_listener implements EventSubscriberInterface
 		'S_ASHIELDS_VERSION_ENABLE'		=> $this->config['ashields_version_enable'] ? true : false,
 		'S_ASHIELDS_COLOR'				=> $this->config['ashields_color'],
 		));
+		// Assign each style value to the template
+		if ($this->config['ashields_style'] == 0)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=flat',
+			));
+		}
+		if ($this->config['ashields_style'] == 1)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=plastic',
+			));
+		}		
+		if ($this->config['ashields_style'] == 2)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=flat-square',
+			));
+		}		
+		if ($this->config['ashields_style'] == 3)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=for-the-badge',
+			));
+		}		
+		if ($this->config['ashields_style'] == 4)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=popout',
+			));
+		}		
+		if ($this->config['ashields_style'] == 5)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=popout-square',
+			));
+		}		
+		if ($this->config['ashields_style'] == 6)
+		{
+			$this->template->assign_vars(array(
+			'ASHIELDS_STYLE'	=> '?LongCache=true&style=social',
+			));
+		}
 	}
 }

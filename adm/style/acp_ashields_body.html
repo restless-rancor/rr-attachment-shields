@@ -19,7 +19,7 @@
 				<label for="ashields_help_explain3">e.g: version-1.0.0</label>
 			</dt>
 			<dd>
-				<label for="ashields_help_explain4"><img src="https://img.shields.io/badge/version-1.0.0-{{ ASHIELDS_COLOR }}.svg?LongCache=true&?label=healthinesses" /></label>
+				<label for="ashields_help_explain4"><img src="https://img.shields.io/badge/version-1.0.0-{{ ASHIELDS_COLOR }}.svg{{ ASHIELDS_STYLE }}" /></label>
 			</dd>
 		</dl>
 	</fieldset>
@@ -51,10 +51,25 @@
 				<input type="text" name="ashields_color" id="ashields_color" class="input" value="{{ ASHIELDS_COLOR }}" />
 			</dd>
 		</dl>
+		<dl>
+			<dt>
+				<label for="ashields_style">{{ lang('ASHIELDS_STYLE') ~ lang('COLON') }} {{ ASHIELDS_STYLE2 }}</label><br /><span>{{ lang('ASHIELDS_STYLE_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<select name="ashields_style">
+					<option value="0"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=flat" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FLAT') }}</option>
+					<option value="1"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=plastic" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_PLASTIC') }}</option>
+					<option value="2"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=flat-square" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FLAT_SQUARE') }}</option>
+					<option value="3"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=for-the-badge" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_FOR_THE_BADGE') }}</option>
+					<option value="4"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=popout" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_POPOUT') }}</option>
+					<option value="5"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=popout-square" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_POPOUT_SQUARE') }}</option>
+					<option value="6"<!-- IF ASHIELDS_STYLE == "?LongCache=true&style=social" --> selected="selected"<!-- ENDIF -->>{{ lang('ASHIELDS_SOCIAL') }}</option>
+				</select>
+			</dd>
+		</dl>
 	</fieldset>
 	<fieldset class="submit-buttons">
-		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
-		<input class="button2" type="submit" name="preview" value="{L_PREVIEW}" />
+		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />
 		{S_FORM_TOKEN}
 	</fieldset>
 
