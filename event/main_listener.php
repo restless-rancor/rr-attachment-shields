@@ -41,142 +41,47 @@ class main_listener implements EventSubscriberInterface
 	public function add_language()
 	{
 		$this->language->add_lang('common', 'restlessrancor/attachmentshields');
+		
+		// Define file / image / flash styles
+		$ashields_file_style = [
+		0 => '?LongCache=true&style=flat',
+		1 => '?LongCache=true&style=plastic',
+		2 => '?LongCache=true&style=flat-square',
+		3 => '?LongCache=true&style=for-the-badge',
+		4 => '?LongCache=true&style=popout',
+		5 => '?LongCache=true&style=popout-square',
+		6 => '?LongCache=true&style=social',
+		];
+		$ashields_image_style = [
+		0 => '?LongCache=true&style=flat',
+		1 => '?LongCache=true&style=plastic',
+		2 => '?LongCache=true&style=flat-square',
+		3 => '?LongCache=true&style=for-the-badge',
+		4 => '?LongCache=true&style=popout',
+		5 => '?LongCache=true&style=popout-square',
+		6 => '?LongCache=true&style=social',
+		];
+		$ashields_flash_style = [
+		0 => '?LongCache=true&style=flat',
+		1 => '?LongCache=true&style=plastic',
+		2 => '?LongCache=true&style=flat-square',
+		3 => '?LongCache=true&style=for-the-badge',
+		4 => '?LongCache=true&style=popout',
+		5 => '?LongCache=true&style=popout-square',
+		6 => '?LongCache=true&style=social',
+		];
+		
+		// Assign to global template
 		$this->template->assign_vars(array(
-		'S_ASHIELDS_ENABLE'				=> $this->config['ashields_enable'] ? true : false,
-		'S_ASHIELDS_VERSION_ENABLE'		=> $this->config['ashields_version_enable'] ? true : false,
-		'S_ASHIELDS_FILE_COLOR'			=> $this->config['ashields_file_color'],
-		'S_ASHIELDS_IMAGE_COLOR'		=> $this->config['ashields_image_color'],
-		'S_ASHIELDS_FLASH_COLOR'		=> $this->config['ashields_flash_color'],
+			'ASHIELDS_ENABLE'				=> $this->config['ashields_enable'] ? true : false,
+			'ASHIELDS_VERSION_ENABLE'		=> $this->config['ashields_version_enable'] ? true : false,
+			'ASHIELDS_FILE_COLOR'			=> $this->config['ashields_file_color'],
+			'ASHIELDS_IMAGE_COLOR'			=> $this->config['ashields_image_color'],
+			'ASHIELDS_FLASH_COLOR'			=> $this->config['ashields_flash_color'],
+			'ASHIELDS_FILE_STYLE' 			=> $ashields_file_style[$this->config['ashields_file_style']],
+			'ASHIELDS_IMAGE_STYLE' 			=> $ashields_file_style[$this->config['ashields_image_style']],
+			'ASHIELDS_FLASH_STYLE' 			=> $ashields_file_style[$this->config['ashields_flash_style']],
 		));
-		// Assign each style value to the template
-		// File shields
-		if ($this->config['ashields_file_style'] == 0)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=flat',
-			));
-		}
-		if ($this->config['ashields_file_style'] == 1)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=plastic',
-			));
-		}		
-		if ($this->config['ashields_file_style'] == 2)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=flat-square',
-			));
-		}		
-		if ($this->config['ashields_file_style'] == 3)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=for-the-badge',
-			));
-		}		
-		if ($this->config['ashields_file_style'] == 4)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=popout',
-			));
-		}		
-		if ($this->config['ashields_file_style'] == 5)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=popout-square',
-			));
-		}		
-		if ($this->config['ashields_file_style'] == 6)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FILE_STYLE'	=> '?LongCache=true&style=social',
-			));
-		}
-		// Image shields
-		if ($this->config['ashields_image_style'] == 0)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=flat',
-			));
-		}
-		if ($this->config['ashields_image_style'] == 1)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=plastic',
-			));
-		}		
-		if ($this->config['ashields_image_style'] == 2)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=flat-square',
-			));
-		}		
-		if ($this->config['ashields_image_style'] == 3)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=for-the-badge',
-			));
-		}		
-		if ($this->config['ashields_image_style'] == 4)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=popout',
-			));
-		}		
-		if ($this->config['ashields_image_style'] == 5)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=popout-square',
-			));
-		}		
-		if ($this->config['ashields_image_style'] == 6)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_IMAGE_STYLE'	=> '?LongCache=true&style=social',
-			));
-		}
-		// Flash shields
-		if ($this->config['ashields_flash_style'] == 0)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=flat',
-			));
-		}
-		if ($this->config['ashields_flash_style'] == 1)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=plastic',
-			));
-		}		
-		if ($this->config['ashields_flash_style'] == 2)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=flat-square',
-			));
-		}		
-		if ($this->config['ashields_flash_style'] == 3)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=for-the-badge',
-			));
-		}		
-		if ($this->config['ashields_flash_style'] == 4)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=popout',
-			));
-		}		
-		if ($this->config['ashields_flash_style'] == 5)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=popout-square',
-			));
-		}		
-		if ($this->config['ashields_flash_style'] == 6)
-		{
-			$this->template->assign_vars(array(
-			'ASHIELDS_FLASH_STYLE'	=> '?LongCache=true&style=social',
-			));
-		}
+	
 	}
 }
