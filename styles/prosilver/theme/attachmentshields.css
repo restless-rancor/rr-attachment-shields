@@ -1,18 +1,19 @@
-dl.attachmentshields-file {
-	background-color: #ffffe6;
-	border: 1px solid;
-	border-radius: 10px;
+/* Hide default CSS */
+div.inline-attachment dl.file {
+	display: none;
+}
+
+dl.file{
+	display: none;
+}
+
+/* Redefine the default ATTACHMENTS box 
+ for attachments not placed in-line */
+.attachbox {
+	background-color: transparent;
+	border: transparent;
+	border-radius: transparent;
 	margin: 5px;
 	padding: 20px 20px 20px;
-	width: auto;
-}
-dt.attachmentshields-image {
-	border: 1px solid;
-}
-dd.attachmentshields-comment {
-	padding: 5px 5px 5px;
-}
-dd.attachmentshields-name {
-	font-size: 15px;
-	padding: 5px 5px 5px;
+	text-align: center;
 }

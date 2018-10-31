@@ -1,44 +1,26 @@
-{% if ASHIELDS_ENABLE %}
 {% if _file.S_THUMBNAIL %}
 	<dl>
 		<dt><a href="{{ _file.U_DOWNLOAD_LINK }}"><img src="{{ _file.THUMB_IMAGE }}" class="postimage" alt="{{ _file.DOWNLOAD_NAME }}" title="{{ _file.DOWNLOAD_NAME }} ({{ _file.FILESIZE }} {{ _file.SIZE_LANG }}) {{ _file.L_DOWNLOAD_COUNT }}" /></a></dt>
 		{% if _file.COMMENT %}<dd>{{ _file.COMMENT }}</dd>{% endif %}
 	</dl>
 {% endif %}
-
 {% if _file.S_IMAGE %}
-	<dl class="attachmentshields-file">
-		<dt class="attachmentshields-image"><img src="{{ _file.U_INLINE_LINK }}" class="postimage" alt="{{ _file.DOWNLOAD_NAME }}" onclick="viewableArea(this);" /></dt>
-		{% if _file.COMMENT %}<dd class="attachmentshields-comment"><em>{{ _file.COMMENT }}</em></dd>{% endif %}
-		<dd class="attachmentshields-name">{{ _file.DOWNLOAD_NAME }} <img src="https://img.shields.io/badge/filesize-{{ _file.FILESIZE }} {{ _file.SIZE_LANG }}-{{ ASHIELDS_IMAGE_COLOR }}.svg{{ ASHIELDS_IMAGE_STYLE }}"> <img src="https://img.shields.io/badge/views-{{ _file.L_DOWNLOAD_COUNT }}-{{ ASHIELDS_IMAGE_COLOR }}.svg{{ ASHIELDS_IMAGE_STYLE }}"></dd>
+	<dl style="{{ ASHIELDS_IMAGE_ABOX_CSS }}";>
+		<dt><img src="{{ _file.U_INLINE_LINK }}" class="postimage" alt="{{ _file.DOWNLOAD_NAME }}" onclick="viewableArea(this);" /></dt>
+		{% if _file.COMMENT %}<dd><em>{{ _file.COMMENT }}</em></dd>{% endif %}
+		<dd>{{ _file.DOWNLOAD_NAME }} <img src="https://img.shields.io/badge/filesize-{{ _file.FILESIZE }} {{ _file.SIZE_LANG }}-{{ ASHIELDS_IMAGE_COLOR }}.svg{{ ASHIELDS_IMAGE_STYLE }}"> <img src="https://img.shields.io/badge/views-{{ _file.L_DOWNLOAD_COUNT }}-{{ ASHIELDS_IMAGE_COLOR }}.svg{{ ASHIELDS_IMAGE_STYLE }}"></dd>
 	</dl>
 {% endif %}
-
 {% if _file.S_FILE %}
 	{% if _file.COMMENT matches '\bv?[0-9]+\.[0-9]+\.[0-9]+(?:\.[0-9]+)?\b' and ASHIELDS_VERSION_ENABLE %}
-	<dl class="attachmentshields-file">
-		<dt>{% if _file.UPLOAD_ICON %}{{ _file.UPLOAD_ICON }} {% endif %}<a class="postlink" href="{{ _file.U_DOWNLOAD_LINK }}">{{ _file.DOWNLOAD_NAME }}</a>&nbsp;<img src="https://img.shields.io/badge/{{ _file.COMMENT }}-{{ ASHIELDS_FILE_COLOR }}.svg{{ ASHIELDS_FILE_STYLE }}">&nbsp;<img src="https://img.shields.io/badge/filesize-{{ _file.FILESIZE }} {{ _file.SIZE_LANG }}-{{ ASHIELDS_FILE_COLOR }}.svg{{ ASHIELDS_FILE_STYLE }}">&nbsp;<img src="https://img.shields.io/badge/downloads-{{ _file.L_DOWNLOAD_COUNT }}-{{ ASHIELDS_FILE_COLOR }}.svg{{ ASHIELDS_FILE_STYLE }}"></dt>
+	<dl style="{{ ASHIELDS_FILE_ABOX_CSS }}";>
+		<dt>{% if _file.UPLOAD_ICON %}{{ _file.UPLOAD_ICON }} {% endif %}<a class="postlink" href="{{ _file.U_DOWNLOAD_LINK }}">{{ _file.DOWNLOAD_NAME }}</a><hr style="height:1px; visibility:hidden;" /><img src="https://img.shields.io/badge/{{ _file.COMMENT }}-{{ ASHIELDS_FILE_COLOR }}.svg{{ ASHIELDS_FILE_STYLE }}">&nbsp;<img src="https://img.shields.io/badge/filesize-{{ _file.FILESIZE }} {{ _file.SIZE_LANG }}-{{ ASHIELDS_FILE_COLOR }}.svg{{ ASHIELDS_FILE_STYLE }}">&nbsp;<img src="https://img.shields.io/badge/downloads-{{ _file.L_DOWNLOAD_COUNT }}-{{ ASHIELDS_FILE_COLOR }}.svg{{ ASHIELDS_FILE_STYLE }}"></dt>
 	</dl>
 	{% else %}
-	<dl class="attachmentshields-file">
+	<dl style="{{ ASHIELDS_FILE_ABOX_CSS }}";>
 		<dt>{% if _file.UPLOAD_ICON %}{{ _file.UPLOAD_ICON }} {% endif %}<a class="postlink" href="{{ _file.U_DOWNLOAD_LINK }}">{{ _file.DOWNLOAD_NAME }}</a></dt>
-		{% if _file.COMMENT %}<dd class="attachmentshields-comment"><em>{{ _file.COMMENT }}</em></dd>{% endif %}
+		{% if _file.COMMENT %}<dd><em>{{ _file.COMMENT }}</em></dd>{% endif %}
 		<dd><img src="https://img.shields.io/badge/filesize-{{ _file.FILESIZE }} {{ _file.SIZE_LANG }}-{{ ASHIELDS_FILE_COLOR }}.svg{{ ASHIELDS_FILE_STYLE }}">&nbsp;<img src="https://img.shields.io/badge/downloads-{{ _file.L_DOWNLOAD_COUNT }}-{{ ASHIELDS_FILE_COLOR }}.svg{{ ASHIELDS_FILE_STYLE }}"></dd>
 	</dl>
 	{% endif %}
-{% endif %}
-
-{% if _file.S_FLASH_FILE %}
-		<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" codebase="http://active.macromedia.com/flash2/cabs/swflash.cab#version=5,0,0,0" width="{{ _file.WIDTH }}" height="{{_file.HEIGHT }}">
-			<param name="movie" value="{{ _file.U_VIEW_LINK }}" />
-			<param name="play" value="true" />
-			<param name="loop" value="true" />
-			<param name="quality" value="high" />
-			<param name="allowScriptAccess" value="never" />
-			<param name="allowNetworking" value="internal" />
-			<embed src="{{ _file.U_VIEW_LINK }}" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" width="{{ _file.WIDTH }}" height="{{ _file.HEIGHT }}" play="true" loop="true" quality="high" allowscriptaccess="never" allownetworking="internal"></embed>
-		</object>
-		<p><a href="{{ _file.U_DOWNLOAD_LINK }}">{{ _file.DOWNLOAD_NAME }}</a> <img src="https://img.shields.io/badge/filesize-{{ _file.FILESIZE }} {{ _file.SIZE_LANG }}-{{ ASHIELDS_FLASH_COLOR }}.svg{{ ASHIELDS_FLASH_STYLE }}">&nbsp;<img src="https://img.shields.io/badge/downloads-{{ _file.L_DOWNLOAD_COUNT }}-{{ ASHIELDS_FLASH_COLOR }}.svg{{ ASHIELDS_FLASH_STYLE }}"></p>
-{% endif %}
-<!--
 {% endif %}

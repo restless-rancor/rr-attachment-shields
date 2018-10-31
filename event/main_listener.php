@@ -42,7 +42,7 @@ class main_listener implements EventSubscriberInterface
 	{
 		$this->language->add_lang('common', 'restlessrancor/attachmentshields');
 		
-		// Define file / image / flash styles
+		// Define file & image styles
 		$ashields_file_style = [
 		0 => '?LongCache=true&style=flat',
 		1 => '?LongCache=true&style=plastic',
@@ -61,26 +61,16 @@ class main_listener implements EventSubscriberInterface
 		5 => '?LongCache=true&style=popout-square',
 		6 => '?LongCache=true&style=social',
 		];
-		$ashields_flash_style = [
-		0 => '?LongCache=true&style=flat',
-		1 => '?LongCache=true&style=plastic',
-		2 => '?LongCache=true&style=flat-square',
-		3 => '?LongCache=true&style=for-the-badge',
-		4 => '?LongCache=true&style=popout',
-		5 => '?LongCache=true&style=popout-square',
-		6 => '?LongCache=true&style=social',
-		];
 		
-		// Assign to global template
+		// Assign to topic template
 		$this->template->assign_vars(array(
-			'ASHIELDS_ENABLE'				=> $this->config['ashields_enable'] ? true : false,
-			'ASHIELDS_VERSION_ENABLE'		=> $this->config['ashields_version_enable'] ? true : false,
-			'ASHIELDS_FILE_COLOR'			=> $this->config['ashields_file_color'],
-			'ASHIELDS_IMAGE_COLOR'			=> $this->config['ashields_image_color'],
-			'ASHIELDS_FLASH_COLOR'			=> $this->config['ashields_flash_color'],
-			'ASHIELDS_FILE_STYLE' 			=> $ashields_file_style[$this->config['ashields_file_style']],
-			'ASHIELDS_IMAGE_STYLE' 			=> $ashields_file_style[$this->config['ashields_image_style']],
-			'ASHIELDS_FLASH_STYLE' 			=> $ashields_file_style[$this->config['ashields_flash_style']],
+			'ASHIELDS_VERSION_ENABLE'	=> $this->config['ashields_version_enable'] ? true : false,
+			'ASHIELDS_FILE_COLOR'		=> $this->config['ashields_file_color'],
+			'ASHIELDS_FILE_ABOX_CSS'	=> $this->config['ashields_file_abox_css'],
+			'ASHIELDS_IMAGE_COLOR'		=> $this->config['ashields_image_color'],
+			'ASHIELDS_IMAGE_ABOX_CSS'	=> $this->config['ashields_image_abox_css'],
+			'ASHIELDS_FILE_STYLE' 		=> $ashields_file_style[$this->config['ashields_file_style']],
+			'ASHIELDS_IMAGE_STYLE' 		=> $ashields_file_style[$this->config['ashields_image_style']],
 		));
 	
 	}
