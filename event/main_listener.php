@@ -34,13 +34,18 @@ class main_listener implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
-            'core.viewtopic_post_rowset_data' => 'add_language',
+            'core.user_setup' => 'load_language_on_setup',
         );
     }
-
-	public function add_language()
-	{
-		$this->language->add_lang('common', 'restlessrancor/attachmentshields');
+	
+	public function load_language_on_setup($event)
+    {
+        $lang_set_ext = $event['lang_set_ext'];
+        $lang_set_ext[] = array(
+            'ext_name' => 'restlessrancor/attachmentshields',
+            'lang_set' => 'common',
+        );
+        $event['lang_set_ext'] = $lang_set_ext;
 		
 		// Define file & image styles
 		$ashields_file_style = [
@@ -72,6 +77,5 @@ class main_listener implements EventSubscriberInterface
 			'ASHIELDS_FILE_STYLE' 		=> $ashields_file_style[$this->config['ashields_file_style']],
 			'ASHIELDS_IMAGE_STYLE' 		=> $ashields_file_style[$this->config['ashields_image_style']],
 		));
-	
-	}
+    }
 }
